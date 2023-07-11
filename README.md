@@ -20,7 +20,9 @@ Actions](https://docs.github.com/en/actions) and test coverage deployed to
 ```bash
 git clone https://github.com/bast/gtest-demo.git
 cd gtest-demo
-cmake -S. -Bbuild 
+rm -rf build/CMakeCache.txt
+cmake -G "MinGW Makefiles" -S. -Bbuild
+cmake -S. -Bbuild
 cmake --build build
 ```
 
@@ -44,7 +46,7 @@ Total Test time (real) =   0.00 sec
 
 Or directly using `unit_tests`:
 ```
-$ cd build 
+$ cd build
 $ ./bin/unit_tests
 
 [==========] Running 2 tests from 1 test case.
